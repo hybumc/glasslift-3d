@@ -81,6 +81,7 @@ test("opens five identical-tile pairs without mixing them into a points opening"
 
 test("finds valid same-rank sets and consecutive runs for the meld selector", () => {
   const game = newGame(["A", "B", "C", "D"]);
+  game.joker = { color:"sari", value:13 };
   const set = [
     { id:"set-r", color:"kirmizi", value:8 },
     { id:"set-b", color:"mavi", value:8 },

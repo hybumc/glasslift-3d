@@ -14,7 +14,7 @@
     "start": "node server.js",
     "test": "node --test",
     "desktop": "electron desktop/main.cjs",
-    "dist:win": "electron-builder --win nsis",
+    "dist:win": "electron-builder --win nsis --publish never",
     "android:prepare": "cap add android && cap sync android",
     "android:sync": "cap sync android"
   },
