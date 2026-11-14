@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: sefa-okey-101
+    runtime: docker
+    plan: starter
+    healthCheckPath: /health
+    envVars:
+      - key: STAFF_PASSWORD_HASH
+        sync: false
+      - key: TRUST_PROXY
+        value: "true"
+      - key: ALLOWED_ORIGIN
+        value: https://sefa-okey-101.onrender.com,https://localhost,capacitor://localhost,http://localhost

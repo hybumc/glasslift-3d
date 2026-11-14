@@ -1,0 +1,61 @@
+{
+  "name": "sefa-okey-101",
+  "version": "0.1.0",
+  "main": "desktop/main.cjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hybumc/glasslift-3d.git"
+  },
+  "author": "Sefa Okey",
+  "private": true,
+  "type": "module",
+  "description": "Sefa Okey 101 - multiplayer Turkish tile game",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test",
+    "desktop": "electron desktop/main.cjs",
+    "dist:win": "electron-builder --win nsis",
+    "android:prepare": "cap add android && cap sync android",
+    "android:sync": "cap sync android"
+  },
+  "dependencies": {
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@capacitor/android": "^7.4.3",
+    "@capacitor/cli": "^7.4.3",
+    "@capacitor/core": "^7.4.3",
+    "electron": "^45.3.2",
+    "electron-builder": "^26.0.12"
+  },
+  "overrides": {
+    "minimatch": "^11.0.8"
+  },
+  "build": {
+    "appId": "com.sefaokey.game",
+    "productName": "Sefa Okey 101",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "desktop/**/*",
+      "public/**/*",
+      "server.js",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "hybumc",
+        "repo": "glasslift-3d"
+      }
+    ]
+  }
+}

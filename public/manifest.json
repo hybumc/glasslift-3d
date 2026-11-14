@@ -1,0 +1,17 @@
+{
+  "name": "Sefa Okey 101",
+  "short_name": "Sefa Okey",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#092c26",
+  "theme_color": "#092c26",
+  "description": "Arkadaşlarınla ve botlarla 101 Okey oyna.",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

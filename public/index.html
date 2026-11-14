@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#092c26">
+  <meta name="description" content="Sefa Okey 101 — arkadaşlarınla, botlarla veya gerçek oyuncularla okey oyna.">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="/styles.css?v=0.1.1">
+  <title>Sefa Okey 101</title>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Sefa Okey ana sayfa"><span class="brand-mark">S</span><span>SEFA <b>OKEY</b></span></a>
+    <div class="top-actions">
+      <span class="server-status"><i></i><span id="status-label">Sunucuya bağlanılıyor</span></span>
+      <button class="staff-button" id="staff-open"><span>♙</span> Personel</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="view active" id="home-view">
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> MASA HAZIR, TAŞLAR SENİ BEKLİYOR</div>
+          <h1>Bir taş çek.<br><em>Oyunun değişsin.</em></h1>
+          <p>101 Okey'in en keyifli hali. İster botlarla pratik yap, ister arkadaşlarını masaya çağır.</p>
+          <div class="name-field"><label for="player-name">MASADA SANA NASIL SESLENSİNLER?</label><input id="player-name" maxlength="20" placeholder="Oyuncu adın" autocomplete="nickname"><span class="name-icon">✎</span></div>
+          <div class="hero-actions"><button class="primary-button" id="bot-game"><span>♟</span> Botlarla oyna <span class="button-arrow">→</span></button><button class="quiet-button" id="random-game"><span class="pulse-dot"></span> Rastgele oyuncu bul</button></div>
+          <div class="hero-note"><span class="sparkle">✦</span> Masada kimse yoksa bot seçeneği sunulur.</div>
+        </div>
+        <div class="table-scene" aria-label="Okey taşlarıyla yeşil bir oyun masası">
+          <div class="table-glow"></div><div class="table-rim"><div class="table-felt">
+            <div class="table-logo">SEFA <strong>OKEY</strong><small>101 · KEYİF MASASI</small></div>
+            <div class="tile tile-hero tile-red t1"><span>1</span></div><div class="tile tile-hero tile-blue t2"><span>0</span></div><div class="tile tile-hero tile-black t3"><span>1</span></div>
+            <div class="tile tile-mini tile-yellow t4"><span>7</span></div><div class="tile tile-mini tile-red t5"><span>9</span></div><div class="tile tile-mini tile-blue t6"><span>5</span></div>
+            <div class="table-caption"><span class="caption-icon">✦</span> ŞANSIN AÇIK OLSUN</div>
+            <div class="seat-avatar seat-top">A</div><div class="seat-avatar seat-left">M</div><div class="seat-avatar seat-right">S</div>
+          </div></div>
+          <div class="floating-chip"><span>🎲</span> Masa seni bekliyor</div>
+        </div>
+      </div>
+
+      <section class="lobby-grid">
+        <article class="lobby-card room-card">
+          <div class="card-icon">⌂</div><div class="card-text"><h2>Arkadaşlarınla oyna</h2><p>Özel bir masa kur veya arkadaşının oda kodunu gir.</p></div>
+          <div class="room-controls"><button class="outline-button" id="create-room">Oda oluştur <span>＋</span></button><div class="join-control"><input id="room-code" maxlength="5" placeholder="ODA KODU" aria-label="Oda kodu"><button id="join-room" aria-label="Odaya katıl">→</button></div></div>
+        </article>
+        <article class="lobby-card quick-card"><div class="card-icon quick-icon">♧</div><div class="card-text"><h2>İlk kez mi oynuyorsun?</h2><p>101 Okey kurallarını kısaca öğren, masaya güvenle otur.</p></div><button class="text-link" id="rules-open">Kuralları gör <span>↗</span></button></article>
+      </section>
+      <footer class="home-footer"><span>© 2026 SEFA OKEY</span><span><i class="footer-dot"></i> Her masa ayrı bir hikâye</span><span>OYNA · PAYLAŞ · KEYFİNİ ÇIKAR</span></footer>
+    </section>
+
+    <section class="view game-view" id="game-view">
+      <div class="game-top"><button class="back-button" id="leave-game">← <span>Lobi</span></button><div class="game-title"><span class="mini-mark">S</span> SEFA OKEY <span class="game-subtitle">101 MASASI</span></div><div class="room-badge" id="room-badge">● BOTLU MASA</div></div>
+      <section class="room-lobby" id="room-lobby" hidden><div class="eyebrow">MASAN HAZIR</div><h2>Arkadaşların masaya gelsin.</h2><p>Oda kodunu paylaş, arkadaşların katılsın. Dilersen boş koltukları botlarla doldur.</p><div class="lobby-code" id="lobby-code"></div><div class="lobby-seats" id="lobby-seats"></div><div class="lobby-buttons"><button class="outline-button" id="copy-code">Kodu kopyala</button><button class="primary-button" id="start-room">Botlarla başla <span class="button-arrow">→</span></button></div></section>
+      <div class="game-board">
+        <div class="opponent opponent-top" id="opponent-2"></div><div class="opponent opponent-left" id="opponent-1"></div><div class="opponent opponent-right" id="opponent-3"></div>
+        <div class="middle-table"><div class="table-fabric"><div class="table-label">SEFA OKEY <b>101</b></div><div class="discard-pile" id="discard-pile"></div><div class="indicator-info"><span>GÖSTERGE</span><div id="indicator-tile"></div><span>OKEY <b id="joker-label">—</b></span></div><button class="draw-pile" id="draw-pile"><span class="pile-glyph">▤</span><span>TAŞ ÇEK</span><small id="wall-count">— taş kaldı</small></button></div></div>
+        <div class="seat-self" id="self-player"></div>
+      </div>
+      <div class="meld-area" id="meld-area"></div>
+      <div class="hand-panel"><div class="hand-heading"><span>TAŞLARIN <small id="hand-count">0 TAŞ</small></span><span class="turn-message" id="turn-message">Sıra sende</span></div><div class="hand" id="hand"></div>
+        <div class="game-actions"><button class="outline-button small-button" id="meld-button" disabled>▧ Seri aç</button><button class="discard-button" id="discard-button" disabled>Taşı at <span>→</span></button></div>
+      </div>
+      <div class="game-toast" id="game-toast" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="modal-backdrop" hidden><section class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close" id="modal-close" aria-label="Kapat">×</button><div id="modal-content"></div></section></div>
+  <script type="module" src="/app.js?v=0.1.1"></script>
+</body>
+</html>
